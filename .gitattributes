@@ -1,0 +1,16 @@
+# Auto handle line endings for text files
+*	text=auto
+
+# Git
+.gitattributes	text
+.gitignore	text
+
+# Markdown
+*.md	text	diff=markdown
+
+# License
+LICENSE	text
+
+# Javascript
+*.js	text
+*.json	text

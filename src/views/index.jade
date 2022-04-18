@@ -3,3 +3,12 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  form(name="data_and_audio_submission", method="POST", enctype="multipart/form-data")
+    div.input
+      span.label Audio File
+      input(type="file", accept="audio/*", name="af")
+    //div.input
+      span.label Text Data to Encrypt
+      input(type="text", name="enc_data")
+    div.actions
+      input(type="submit", value="Encrypt")

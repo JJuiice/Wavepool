@@ -14,3 +14,15 @@ LICENSE	text
 # Javascript
 *.js	text
 *.json	text
+
+# CSS
+*.css	text	diff=css
+
+# Yarn
+yarn.lock	text
+
+# ExpressJS
+www	text
+
+# Jade
+*.jade	text

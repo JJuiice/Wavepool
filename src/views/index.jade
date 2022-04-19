@@ -4,11 +4,21 @@ block content
   h1= title
   p Welcome to #{title}
   form(name="data_and_audio_submission", method="POST", enctype="multipart/form-data")
-    div.input
+    div.actSelInput
+      span.label Action Selection
+      div
+        input(type="radio", id="enc", value="enc")
+        span.label Encrypt
+        input(type="radio", id="dec", value="dec")
+        span.label Decrypt
+    div.afInput
       span.label Audio File
       input(type="file", accept="audio/wav", name="af")
-    div.input
+    div.encDataInput
       span.label Text Data to Encrypt
       input(type="text", name="enc_data")
     div.actions
       input(type="submit", value="Encrypt")
+
+block scripts
+  script(type="text/javascript" src="/js/controlFormVisibility.js")

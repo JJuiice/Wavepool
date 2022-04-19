@@ -6,8 +6,8 @@ block content
   form(name="data_and_audio_submission", method="POST", enctype="multipart/form-data")
     div.input
       span.label Audio File
-      input(type="file", accept="audio/*", name="af")
-    //div.input
+      input(type="file", accept="audio/wav", name="af")
+    div.input
       span.label Text Data to Encrypt
       input(type="text", name="enc_data")
     div.actions

@@ -149,3 +149,6 @@ dist
 
 # ExpressJS Multer File Uploads
 uploads/
+
+# Output Dir
+output/

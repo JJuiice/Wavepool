@@ -6,6 +6,9 @@ const path = require("path");
 const helpers = require("../helpers");
 const fs = require("fs");
 
+const WAV_BYTE_OFFSET = 44;
+const OUTPUT_DIR = process.cwd() + "/output";
+
 const storage = multer.diskStorage({
   destination: "uploads/",
   filename: function (req, file, cb) {
@@ -41,17 +44,37 @@ router.post("/", function (req, res) {
       if (err) {
         res.send("Could not locate file locally");
       } else {
-        const buf16Byte = Buffer.alloc(16);
+        let encDataBinRep = "";
+        encDataBinRep = req.body.enc_data
+          .split("")
+          .map((char) => {
+            return char.charCodeAt(0).toString(2).padStart(8, "0");
+          })
+          .join("");
 
-        for (const pair of data.entries()) {
-          const inx = pair[0] % 16;
-          buf16Byte[inx] = pair[1];
-          if (inx === 15) {
-            console.log(buf16Byte);
-            break;
-          }
+        for (let i in encDataBinRep) {
+          data[WAV_BYTE_OFFSET + i] &= 0b11111110;
+          data[WAV_BYTE_OFFSET + i] |= parseInt(encDataBinRep[i]);
         }
-        res.send("Done");
+
+        const OUTPUT_FNAME =
+          req.file.originalname.slice(0, -4) +
+          " - " +
+          Date.now() +
+          " - " +
+          Math.round(Math.random() * 1e9) +
+          req.file.originalname.slice(-4);
+
+        if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR);
+
+        fs.writeFile(OUTPUT_DIR + "/" + OUTPUT_FNAME, data, (err) => {
+          if (err) {
+            console.error(err);
+            res.send("Error");
+          } else {
+            res.send("Done");
+          }
+        });
       }
     });
   });

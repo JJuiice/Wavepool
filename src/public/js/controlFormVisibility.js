@@ -1,7 +1,30 @@
-const ENC_RDIO_BTN = document.querySelector("form>.actSelInput>#enc");
-const DEC_RDIO_BTN = document.querySelector("form>.actSelInput>#dec");
+function revealActionOpts(actVal) {
+  const AF_INPUT = document.querySelector(".afInput");
+  const ENC_DATA_INPUT = document.querySelector(".encDataInput");
+  const SUBMIT_BTN = document.querySelector(".actions");
+  if (actVal === "enc") {
+    AF_INPUT.style.display = "block";
+    ENC_DATA_INPUT.style.display = "block";
+    SUBMIT_BTN.style.display = "block";
+  } else if (actVal === "dec") {
+    AF_INPUT.style.display = "block";
+    ENC_DATA_INPUT.style.display = "none";
+    SUBMIT_BTN.style.display = "block";
+  } else {
+    AF_INPUT.style.display = "none";
+    ENC_DATA_INPUT.style.display = "none";
+    SUBMIT_BTN.style.display = "none";
+  }
+}
+
+function getSelectedAction() {
+  const SELECTED_ACTION = document.querySelector("[name=action]:checked");
+
+  if (SELECTED_ACTION === null) return null;
+
+  return SELECTED_ACTION.value;
+}
 
 window.onload = (event) => {
-  console.log(ENC_RDIO_BTN.value);
-  console.log(DEC_RDIO_BTN.value);
+  revealActionOpts(getSelectedAction());
 };

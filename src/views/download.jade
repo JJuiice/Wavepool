@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  div#wavepool_main
+    div#info
+      h1= "Success!"
+      p Download your encrypted audio file #{''}
+        a(href="#{encAudioLink}") here
+    form(action="/")
+      input(type="submit", value="Return", class="actions")

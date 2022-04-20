@@ -1,0 +1,17 @@
+form[name="data_and_audio_submission"] div[name="actSel"] {
+  margin: 5%;
+}
+
+form[name="data_and_audio_submission"] div[name="actSel"]>input[name="action"] {
+  margin-left: 20%;
+}
+
+form[name="data_and_audio_submission"]>div>input[type="file"] {
+  margin: 5%;
+}
+
+#encDataInput>input[type="text"] {
+  display: block;
+  margin-bottom: 10%;
+  width: 100%;
+}

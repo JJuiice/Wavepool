@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div#wavepool_main
+    div#info
+      h1= "Your audio file was successfully decrypted!"
+      p #{decMsg}
+    form(action="/")
+      input(type="submit", value="Return", class="actions")

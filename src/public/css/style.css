@@ -16,19 +16,7 @@ input, textarea {
   font-size: inherit;
 }
 
-form[name="data_and_audio_submission"] div[name="actSel"] {
-  margin: 20px;
-}
-
-form[name="data_and_audio_submission"] div[name="actSel"]>input[name="action"] {
-  margin-left: 100px;
-}
-
-form[name="data_and_audio_submission"]>div>input[type="file"] {
-  margin: 20px;
-}
-
-#waveform {
+#wavepool_main {
   margin: auto;
   width: 60%;
   border: 2px solid #0a65bb;
@@ -37,17 +25,11 @@ form[name="data_and_audio_submission"]>div>input[type="file"] {
 }
 
 #info {
-  margin-bottom: 40px;
+  margin-bottom: 10%;
   text-align: center;
 }
 
-#encDataInput>textarea {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100%;
-  min-height: 100px;
-}
-
-#actions {
-  margin-left: 95%;
+.actions {
+  margin-top: 5%;
+  margin-left: 45%;
 }

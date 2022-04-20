@@ -1,7 +1,7 @@
 function revealActionOpts(actVal) {
   const AF_INPUT = document.querySelector("#afInput");
   const ENC_DATA_INPUT = document.querySelector("#encDataInput");
-  const SUBMIT_BTN = document.querySelector("#actions");
+  const SUBMIT_BTN = document.querySelector("#wavepool_submit");
   if (actVal === "enc") {
     AF_INPUT.style.display = "block";
     ENC_DATA_INPUT.style.display = "block";

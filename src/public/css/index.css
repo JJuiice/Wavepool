@@ -15,3 +15,10 @@ form[name="data_and_audio_submission"]>div>input[type="file"] {
   margin-bottom: 10%;
   width: 100%;
 }
+
+#errMsg {
+  margin: auto;
+  width: 60%;
+  color: red;
+  text-align: center;
+}

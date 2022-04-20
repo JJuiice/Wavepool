@@ -21,7 +21,7 @@ block content
         input(type="file", accept="audio/wav", name="af")
       div#encDataInput
         input(type="text", name="enc_data", placeholder="Message to Encrypt")
-      div.actions
+      div(id="wavepool_submit", class="actions")
         input(type="submit", value="Go")
   div#errMsg
     p #{errMsgDesc}

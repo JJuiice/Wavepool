@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +9,45 @@ body {
 
 a {
   color: #00B7FF;
+}
+
+input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+form[name="data_and_audio_submission"] div[name="actSel"] {
+  margin: 20px;
+}
+
+form[name="data_and_audio_submission"] div[name="actSel"]>input[name="action"] {
+  margin-left: 100px;
+}
+
+form[name="data_and_audio_submission"]>div>input[type="file"] {
+  margin: 20px;
+}
+
+#waveform {
+  margin: auto;
+  width: 60%;
+  border: 2px solid #0a65bb;
+  padding: 10px;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.2);
+}
+
+#info {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+#encDataInput>textarea {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  min-height: 100px;
+}
+
+#actions {
+  margin-left: 95%;
 }

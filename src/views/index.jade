@@ -1,24 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  form(name="data_and_audio_submission", method="POST", enctype="multipart/form-data")
-    div.actSelInput
-      span.label Action Selection
-      div
-        input(type="radio", name="action", value="enc", onclick="revealActionOpts('enc')")
-        span.label Encrypt
-        input(type="radio", name="action", value="dec", onclick="revealActionOpts('dec')")
-        span.label Decrypt
-    div.afInput
-      span.label Audio File
-      input(type="file", accept="audio/wav", name="af")
-    div.encDataInput
-      span.label Text Data to Encrypt
-      input(type="text", name="enc_data")
-    div.actions
-      input(type="submit", value="Go")
+  div#waveform
+    div#info
+      h1= title
+      p Welcome to #{title} - A basic ExpressJS application for audio stenography (only *.wav files are supported at the moment)
+    form(name="data_and_audio_submission", method="POST", enctype="multipart/form-data")
+      div#actSelInput
+        label(for="actSel") Action Selection
+        div(name="actSel")
+          input(type="radio", name="action", value="enc", onclick="revealActionOpts('enc')")
+          span.label Encrypt
+          input(type="radio", name="action", value="dec", onclick="revealActionOpts('dec')")
+          span.label Decrypt
+      div#afInput
+        label(for="af", class="afInput") Audio File
+        input(type="file", accept="audio/wav", name="af")
+      div#encDataInput
+        label(for="enc_data", class="encDataInput") Text Data To Encrypt
+        textarea(name="enc_data", placeholder="Type Message Here")
+      div#actions
+        input(type="submit", value="Go")
 
 block scripts
   script(type="text/javascript" src="/js/controlFormVisibility.js")
